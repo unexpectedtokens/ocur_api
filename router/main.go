@@ -24,7 +24,16 @@ func SetUpRoutes(){
 	router.GET("/test/", ping)
 
 	_cors := cors.Options{
-        AllowedMethods: []string{"POST", "OPTIONS", "GET", "PUT", "UPDATE", "PATCH", "HEAD", "DELETE"},
+        AllowedMethods: []string{
+			"POST", 
+			"OPTIONS", 
+			"GET", 
+			"PUT", 
+			"UPDATE", 
+			"PATCH", 
+			"HEAD", 
+			"DELETE",
+		},
         AllowedOrigins: []string{"*"},
 		AllowedHeaders: []string{"*"},
     }
