@@ -1,0 +1,10 @@
+package router
+
+
+
+
+func SetUpRoutes(){
+	
+
+
+}
