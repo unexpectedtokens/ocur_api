@@ -6,7 +6,9 @@ import (
 
 	_ "github.com/jackc/pgx"
 	"github.com/joho/godotenv"
+	"github.com/unexpectedtokens/ocur_api/db"
 	"github.com/unexpectedtokens/ocur_api/migrations"
+	"github.com/unexpectedtokens/ocur_api/router"
 )
 
 
@@ -18,6 +20,7 @@ func main(){
 		panic(err)
 	}
 	fmt.Println(len(os.Args))
+	
 	//db.InitDB()
 	if len(os.Args) > 1{
 		for _, x := range os.Args{
@@ -27,6 +30,10 @@ func main(){
 				}
 			}
 		}
+	}else{
+		db.InitDB()
+		router.SetUpRoutes()
 	}
+	
 
 }
