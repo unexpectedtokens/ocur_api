@@ -37,11 +37,7 @@ func SetUpRoutes(){
         AllowedOrigins: []string{"*"},
 		AllowedHeaders: []string{"*"},
     }
-
 	handler := cors.New(_cors).Handler(router)
-
 	fmt.Println("Setting op listening on port 8080")
-	
 	panic(http.ListenAndServe("localhost:8080", handler))
-
 }

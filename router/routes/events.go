@@ -20,6 +20,7 @@ func CreateEvent(w http.ResponseWriter, r *http.Request, _ httprouter.Params){
 	ev := event.Event{}
 	err := json.NewDecoder(r.Body).Decode(&ev)
 	if err != nil{
+		fmt.Println(err)
 		w.WriteHeader(http.StatusBadRequest)
 		w.Write([]byte("bad request: unable to parse body"))
 		return
