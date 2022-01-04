@@ -1,4 +1,4 @@
-package event
+package model
 
 import (
 	"database/sql"
@@ -11,11 +11,12 @@ import (
 
 type Event struct{
 	ID int `db:"_id" json:"id"`
-	Max_Participants int `json:"maxParticipations" db="max_participants"`
+	Max_Participants int `json:"maxparticipants" db="max_participants"`
 	Title string
 	Description string 
 	Location string `json:"location" `
 	Date time.Time
+	ParticipationCount int
 }
 
 
